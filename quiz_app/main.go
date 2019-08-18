@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"encoding/csv"
+	"strings"
 )
 
 type problem struct{
@@ -48,7 +49,7 @@ func parseLines(lines [][] string) []problem{
 	for i, line := range lines {
 		result[i] = problem{
 			q: line[0],
-			a: line[1],
+			a: strings.TrimSpace(line[1]),
 		}
 	}
 	return result
